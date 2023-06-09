@@ -1,0 +1,20 @@
+@import "./Body.css";
+@import "./Header.css";
+
+
+.btn-custom{
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  opacity: 0.8;
+}
+
+.btn-custom:hover{
+  background-color: #ff8000;
+  opacity: 1;
+  color: white;
+}
+
+.btn-custom2{
+  margin-right:10px;
+}

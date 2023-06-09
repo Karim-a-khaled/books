@@ -1,0 +1,37 @@
+body{
+  background-color: #eec5b3;
+}
+h1{
+  font-size: 80px;
+}
+h2{
+  margin: 4px 0 15px 0;
+}
+.inp-btn input{
+  border:none;
+  outline:none;
+  width: 70%;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.inp-btn  button{
+  padding: 10px;
+  border-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.inp-btn {
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.content{
+  padding: 130px 0 0 0;
+}
+
+.image{
+  padding-left: 0;
+}
+
