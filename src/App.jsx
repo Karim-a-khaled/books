@@ -2,6 +2,7 @@
 
 import Header from './components/Header'
 import Body from './components/Body'
+// import Books from './components/Books'
 import Footer from './components/Footer'
 function App() {
 return (
@@ -9,7 +10,6 @@ return (
     <Header/>
     <Body/>
     <Footer/>
-
   </div>
   )
 }

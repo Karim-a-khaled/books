@@ -18,3 +18,10 @@
 .btn-custom2{
   margin-right:10px;
 }
+
+.container-custom{
+  display: flex;
+  width: 100%;
+  flex-wrap:wrap ;
+  gap: 10px;
+}
