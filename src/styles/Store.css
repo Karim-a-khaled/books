@@ -5,9 +5,22 @@
 .price{
   font-size: 24px;
   font-weight: 600;
-  margin-left: 130px;
+
+}
+.card-body-custom{
+  position: relative;
+}
+.btn-span{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: -15px;
 }
 
-.btn-span{
-  
+.btn-span link button{
+  width: 40%;
+  padding: 7px 10px;
 }
