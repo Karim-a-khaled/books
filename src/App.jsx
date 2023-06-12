@@ -2,13 +2,14 @@
 
 import Header from './components/Header'
 import Body from './components/Body'
-// import Books from './components/Books'
+import Store from './components/Store'
 import Footer from './components/Footer'
 function App() {
 return (
   <div className="App">
     <Header/>
-    <Body/>
+    {/* <Body/> */}
+    <Store/>
     <Footer/>
   </div>
   )
