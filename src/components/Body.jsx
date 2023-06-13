@@ -5,21 +5,21 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import '../styles/index.css'
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function Body() {
-  const [books,setBooks] = useState("")
+  // const [books,setBooks] = useState("")
 
-  function fetchingBooks(){
-    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${books}`
+  function fetchingBooks(e){
+    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${e.target.value}`
     fetch(API_URL).then((response)=> response.json()).then((data)=>{
-      displayingBooks(data)
+      data.items.forEach((book) => {
+        console.log(book.title)
+        displayingBooks(book)});
     })
   }
-  const getInputValue = (e)=>{
-    setBooks(e.target.value)
-  }
+
 
   function displayingBooks(book){
   return(
@@ -41,7 +41,7 @@ function Body() {
             <h1>Online Library</h1>
             <h2 className='text-center'>Empower Your Mind</h2>
             <div className="inp-btn">
-              <input onChange={getInputValue} placeholder='Book Name...' className='body-input-custom' type="text" />
+              <input placeholder='Book Name...' className='body-input-custom' type="text" />
               <button onClick={fetchingBooks} className='btn btn-custom'>Search A Book</button>
             </div>
           </Col>
