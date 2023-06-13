@@ -1,0 +1,15 @@
+{/* {
+ searchedBooks.map((book) =>(
+    <Card className='main-card-custom' style={{ width: '22rem' }} key={book.title}>
+      <Card.Img variant="top" src={book.image} />
+      <Card.Body className='card-body-custom'>
+        <Card.Title>{book.title}</Card.Title>
+        <Card.Text className='card-text-custom'>{book.description}</Card.Text>
+        <div className="btn-span d-flex">
+          <Link to={`/${book.id}`} ><Button className="btn-custom align-self-end">View Book</Button></Link>
+          <span className="price">$150.00</span>
+        </div>
+      </Card.Body>
+    </Card>
+  ))} */}
+  {/* </div> */}
