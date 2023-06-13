@@ -1,0 +1,17 @@
+section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.information{
+    width: 50%;
+    margin: 0 auto;
+    align-self: center;
+}
+
+h4{
+    margin: 7px 0 20px 0 !important;
+}
+h2{
+    margin-bottom: 0 !important;
+}

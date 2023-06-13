@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header'
 import Body from './components/Body'
 import Store from './components/Store'
-import Footer from './components/Footer'
 import Details from "./components/Details";
 function App() {
 return (
@@ -17,7 +16,6 @@ return (
       </Routes>
     </BrowserRouter>
 
-    <Footer/>
   </div>
   )
 }

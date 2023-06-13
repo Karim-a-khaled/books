@@ -24,3 +24,13 @@
   width: 40%;
   padding: 7px 10px;
 }
+.input-custom{
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.input-container-custom{
+  padding: 80px 0 20px 0;
+}
