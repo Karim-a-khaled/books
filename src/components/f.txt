@@ -12,4 +12,19 @@
       </Card.Body>
     </Card>
   ))} */}
-  {/* </div> */}
+  {/* </div> */}\
+
+
+
+    function displayingBooks(book){
+    return(
+      <Card style={{ width: '18rem' }} key={book.title}>
+        <Card.Img variant="top" src={book.image} />
+        <Card.Body>
+          <Card.Title>{book.title}</Card.Title>
+          <Card.Text>{book.description}</Card.Text>
+          <Button className="btn-custom">View Book</Button>
+        </Card.Body>
+      </Card>
+    )
+  }

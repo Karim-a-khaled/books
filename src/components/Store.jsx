@@ -10,13 +10,14 @@ import { useState } from 'react';
 export default function Store() {
   const [searchedBooks,setBook] = useState(books)
 
-  function filteredBooks(e){
-    const theBook = books.filter((book)=>{
-      return book.title.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
+  const search = (event)=>{
+    let searched = event.target.value; 
+
+    let theBook = books.filter((book)=>{
+      return book.title.toLocaleLowerCase().includes(searched.toLocaleLowerCase())
     })
-    console.log(theBook)
     setBook(theBook)
-  }
+}
 
   function displayBooks() {
     return books.map((book) => (
@@ -39,7 +40,7 @@ export default function Store() {
 return( 
   <>
     <div className="container input-container-custom"> 
-      <input type="text" onChange={filteredBooks}  placeholder='Search A Book..' className='input-custom' />
+      <input type="text" onChange={search}  placeholder='Search A Book..' className='input-custom' />
     </div>
     <div className="container container-custom">{displayBooks()}</div>
   </>

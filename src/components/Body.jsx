@@ -5,34 +5,39 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import '../styles/index.css'
-// import { useState } from 'react';
+import { useState } from 'react';
 
 
 function Body() {
-  // const [books,setBooks] = useState("")
+  const [theBookName,setTheBookName] = useState('')
+  const handleInput = event => {setTheBookName(event.target.value)}
 
-  function fetchingBooks(e){
-    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${e.target.value}`
-    fetch(API_URL).then((response)=> response.json()).then((data)=>{
-      data.items.forEach((book) => {
-        console.log(book.title)
-        displayingBooks(book)});
-    })
+  function fetchingBooks() {
+    const bookName = theBookName;
+    console.log(theBookName)
+    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${bookName}`;
+
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        data.items.forEach((book) => {
+          displayingBooks(book)
+        });
+      });
   }
-
 
   function displayingBooks(book){
-  return(
-    <Card style={{ width: '18rem' }} key={book.title}>
-      <Card.Img variant="top" src={book.image} />
-      <Card.Body>
-        <Card.Title>{book.title}</Card.Title>
-        <Card.Text>{book.description}</Card.Text>
-        <Button className="btn-custom">View Book</Button>
-      </Card.Body>
-    </Card>
-  )
+    return(
+      <Card style={{ width: '18rem' }} key={book.title}>
+        <Card.Body>
+          <Card.Title>{book.title}</Card.Title>
+          <Card.Text>{book.description}</Card.Text>
+          <Button className="btn-custom">View Book</Button>
+        </Card.Body>
+      </Card>
+    )
   }
+
   return (
     <>
       <Container fluid className='Body-body container'>
@@ -41,7 +46,7 @@ function Body() {
             <h1>Online Library</h1>
             <h2 className='text-center'>Empower Your Mind</h2>
             <div className="inp-btn">
-              <input placeholder='Book Name...' className='body-input-custom' type="text" />
+              <input onChange={handleInput} value={theBookName} placeholder='Book Name...' className='body-input-custom' type="text" />
               <button onClick={fetchingBooks} className='btn btn-custom'>Search A Book</button>
             </div>
           </Col>
