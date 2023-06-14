@@ -12,6 +12,7 @@ export default function Store() {
 
   const search = (event)=>{
     let searched = event.target.value; 
+    console.log(searched)
 
     let theBook = books.filter((book)=>{
       return book.title.toLocaleLowerCase().includes(searched.toLocaleLowerCase())
@@ -19,8 +20,12 @@ export default function Store() {
     setBook(theBook)
 }
 
-  function displayBooks() {
-    return books.map((book) => (
+return( 
+  <>
+    <div className="container input-container-custom"> 
+      <input type="text" onChange={search}  placeholder='Search A Book..' className='input-custom' />
+    </div>
+    <div className="container container-custom">{searchedBooks.map((book) => (
       <>
       <Card className='main-card-custom' key={book.id} >
         <Card.Img variant="top" src={book.image} />
@@ -34,15 +39,7 @@ export default function Store() {
         </Card.Body>
       </Card>
       </>
-    ));
-  }
-
-return( 
-  <>
-    <div className="container input-container-custom"> 
-      <input type="text" onChange={search}  placeholder='Search A Book..' className='input-custom' />
-    </div>
-    <div className="container container-custom">{displayBooks()}</div>
+    ))}</div>
   </>
 )
 
